@@ -17,6 +17,6 @@ function mostrarAumento()
 	//el nuevo importe, es el importe menos el descuento
 	nuevoImporte = importe - descuento;
 
-	//mostramos el nuevo importe por ID.
+	//mostramos el nuevo importe por ID
 	document.getElementById("txtIdResultado").value = nuevoImporte;
 }
