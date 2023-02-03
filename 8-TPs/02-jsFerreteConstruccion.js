@@ -34,8 +34,12 @@ function Circulo ()
 
     //calculamos el perimetro
     /*La longitud de la circunferencia (o perímetro) 
-    es igual a dos veces el radio (r) por π (3.14)*/
-    perimetroDelTerreno = (radioDelTerreno *2)*3.14;
+    es igual a dos veces el radio (r) por π (3.14);*/
+    
+
+    //perimetroDelTerreno = (radioDelTerreno *2)*3.14;
+    //en la clase se vio que es 2*pi *radio*/
+    perimetroDelTerreno = (2 * Math.PI) *radioDelTerreno;
 
     //cant. de alambre sabiendo que son 3 vueltas
     cantidadAlambre = perimetroDelTerreno *3;
