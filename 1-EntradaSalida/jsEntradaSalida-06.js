@@ -14,6 +14,6 @@ function sumar()
 
 	alert(resultado);
 
-
+	
 }
 
