@@ -22,5 +22,16 @@ function mostrar()
 		alert("Su nota es: "+ notaRandom + "  Vamos la proxima se puede!")
 	}
 
+	
+	/*
+	if(notaRandom >= 9){		//si es mayor o igual a 9
+		alert( "Su Nota es: "+ notaRandom + "  Excelente!");
+	}else if( notaRandom < 4 ){ 	//si es menor a 4 
+		alert("Su nota es: "+ notaRandom + "  Vamos la proxima se puede!");
+	}else { 					// evalua nota mayor a 4 hasta 8
+		alert(" Su Nota es: " + notaRandom + "  Aprobó!");
+	}
+ 	*/
+
 	//asi dice el enunciado
 }//FIN DE LA FUNCIÓN
