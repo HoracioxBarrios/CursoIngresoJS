@@ -8,6 +8,7 @@ function mostrar()
 	//tomo la edad 
 	edadIngresada = document.getElementById("txtIdEdad").value;
 	edadIngresada = parseInt(edadIngresada);
+	
 	//tomo el estado civil
 	estadoCivil = document.getElementById("estadoCivil").value;
 

@@ -8,7 +8,7 @@ function mostrar() {
 	edadIngresada = document.getElementById("txtIdEdad").value;
 	edadIngresada = parseInt(edadIngresada);
 	
-
+	/*
 	if (edadIngresada >= 18) { // se evaluda si es mayor y si no entra al ELSE
 		alert("Es mayor de edad");
 	} else {
@@ -18,7 +18,7 @@ function mostrar() {
 			alert("Es adolecente"); 
 		}
 	}
-	
+	*/
 
 	// otra forma:
 	/*
@@ -38,7 +38,7 @@ function mostrar() {
 
 
 	// es para mas adelante. No es valido para este caso.
-	/*
+	
 	  if(edadIngresa < 13){ // si es menor a 13 es niño
 		  alert("es niño");
 	  }else if(edadIngresada >= 18){ // evaluo otra condicion: si es mayor o igual a 18 , es mayor de edad
@@ -47,6 +47,6 @@ function mostrar() {
 		  alert("es adolecente"); // sino por descarte es adolecente
 	  }
   
-	  */
+	  
 	   
 } //FIN DE LA FUNCIÓN
