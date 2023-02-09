@@ -39,14 +39,14 @@ function mostrar() {
 
 	// es para mas adelante. No es valido para este caso.
 	/*
-	  if(edadIngresada >= 18){ // si es mayor o igual a 18 
-		  alert("es mayor de edad");
-	  }else if(edadIngresada >= 13){ // evaluo otra condicion: si es mayor o igual a 13 
-		  alert("es adolecente");		//hasta 18 porque ya lo evaluamos
+	  if(edadIngresa < 13){ // si es menor a 13 es niño
+		  alert("es niño");
+	  }else if(edadIngresada >= 18){ // evaluo otra condicion: si es mayor o igual a 18 , es mayor de edad
+		  alert("es  mayor de edad");		
 	  }else {
-		  alert("es niño"); // por descarte
+		  alert("es adolecente"); // sino por descarte es adolecente
 	  }
   
-	  // gracias!!!
-	   */
+	  */
+	   
 } //FIN DE LA FUNCIÓN
