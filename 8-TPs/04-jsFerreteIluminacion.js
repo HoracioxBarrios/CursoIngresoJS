@@ -99,7 +99,7 @@ function CalcularPrecio (){
         }
     }
     
-    //importeFinal = importeConDescuento;
+    //evaluo si el importe coon descuento supera 120$
     if(importeConDescuento > 120){                                                 //Punto E- Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje: ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
         //calculo el IIBB 10%
         impuestoIibb = (importeConDescuento *10)/100;
@@ -108,7 +108,7 @@ function CalcularPrecio (){
         //importeFinal = importeConAumento;
         document.getElementById("txtIdprecioDescuento").value = importeConAumento;
         alert("”Usted pago " + impuestoIibb + " $ " +  "como Impuesto IIBB ");
-    }else {
+    }else {// sino
         document.getElementById("txtIdprecioDescuento").value = importeConDescuento;
     }
     
