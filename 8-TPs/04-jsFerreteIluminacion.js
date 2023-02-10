@@ -8,9 +8,8 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
-{
- 	let valorLamparas = 60;
+function CalcularPrecio (){
+ 	let valorLamparas = 35;
     let cantidadLamp;
     let marcaLamp;
     let sumaPrecioLamparas;
@@ -22,18 +21,22 @@ function CalcularPrecio ()
     let quinceDescuento;
     let diezDescuento;
     let cincoDescuento;
-    let importeFinalConDescuento;
+    let importeConDescuento;
     let impuestoIibb;
-    let importeFinalConAumento;
+    let importeConAumento;
+    
 
-    //toma de datos por Id
-    cantidadLamp = parseFloat(document.getElementById("txtIdCantidad").value);
+    //toma por Id - cantidad de lamparas
+    cantidadLamp = document.getElementById("txtIdCantidad").value;
+    cantidadLamp = parseInt(cantidadLamp);
+
+    // toma por Id de marca lamparas
     marcaLamp = document.getElementById("Marca").value;
 
-    //suma de cantidad de lamparas 
+    //suma de precios  c/u lamparas  35 $ 
     sumaPrecioLamparas = cantidadLamp * valorLamparas;
 
-    //tipos de descuento
+    //tipos de descuento 
     cincuentaDescuento = (sumaPrecioLamparas *50)/100;
     cuarentaDescuento = (sumaPrecioLamparas * 40)/100;
     treintaDescuento = (sumaPrecioLamparas * 30)/100;
@@ -43,51 +46,72 @@ function CalcularPrecio ()
     diezDescuento = (sumaPrecioLamparas*10)/100;
     cincoDescuento = (sumaPrecioLamparas * 5 )/100;
     
-    if(cantidadLamp >= 6){
+    if(cantidadLamp >= 6){                                                          // Punto A -Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
         //aplico 50% de descuento
-        importeFinalConDescuento = sumaPrecioLamparas - cincuentaDescuento;
-        alert("cant comprada "+ cantidadLamp + " Importe c/dec del 50% " + importeFinalConDescuento + " $ ");
-    }else if(cantidadLamp == 5){
+        importeConDescuento = sumaPrecioLamparas - cincuentaDescuento;
+        //alert("cant comprada "+ cantidadLamp + " Importe c/dec del 50% " );
+        
+
+    }else if(cantidadLamp == 5){                                                    //Punto B -Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
         if(marcaLamp == "ArgentinaLuz"){
             // aplico 40% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - cuarentaDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe c/dec del 40% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - cuarentaDescuento;
+            //alert("cant comprada "+ cantidadLamp + " Importe c/dec del 40% " );
+            
+
         }else {
             // aplico 30% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - treintaDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe c/dec del 30% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - treintaDescuento;
+            //alert("cant comprada "+ cantidadLamp + " Importe c/dec del 30% " );
+           
         }
-    }else if(cantidadLamp == 4){
+    }else if(cantidadLamp == 4){                                                      // Punto C -Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
         if(marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas"){
             //aplico 25% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - veintiCincoDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe c/dec del 25% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - veintiCincoDescuento;
+           // alert("cant comprada "+ cantidadLamp + " Importe c/dec del 25% " );
+            
+
         }else {
             //aplico 20% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - VeinteDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 20% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - VeinteDescuento;
+           // alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 20% ");
+            
         }
-    }else if(cantidadLamp == 3){
+    }else if(cantidadLamp == 3){                                                        //Punto D - Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
         if(marcaLamp == "ArgentinaLuz" ){
             //aplico 15% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - quinceDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 15% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - quinceDescuento;
+            //alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 15% ");
+           
+
         }else if(marcaLamp == "FelipeLamparas"){
             //aplico 10% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - diezDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 10% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - diezDescuento;
+            //alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 10% ");
+           
+
         }else {
             //aplico 5% de descuento
-            importeFinalConDescuento = sumaPrecioLamparas - cincoDescuento;
-            alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 5% " + importeFinalConDescuento + " $ ");
+            importeConDescuento = sumaPrecioLamparas - cincoDescuento;
+            //alert("cant comprada "+ cantidadLamp + " Importe final c/dec del 5% " );
+           
         }
     }
-    if(importeFinalConDescuento > 120){
+    
+    //importeFinal = importeConDescuento;
+    if(importeConDescuento > 120){                                                 //Punto E- Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje: ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
         //calculo el IIBB 10%
-        impuestoIibb = (importeFinalConDescuento *10)/100;
+        impuestoIibb = (importeConDescuento *10)/100;
         //aplico IIBB de aumento por ser mayor a 120 el monto a pagar
-        importeFinalConAumento = importeFinalConDescuento + impuestoIibb;
-        alert("”Usted pago " + impuestoIibb + " $ " +  "como Impuesto IIBB "+ "\n"
-        + " El Importe final con Impuesto:  " + importeFinalConAumento + " $ ");
+        importeConAumento = importeConDescuento + impuestoIibb;
+        //importeFinal = importeConAumento;
+        document.getElementById("txtIdprecioDescuento").value = importeConAumento;
+        alert("”Usted pago " + impuestoIibb + " $ " +  "como Impuesto IIBB ");
+    }else {
+        document.getElementById("txtIdprecioDescuento").value = importeConDescuento;
     }
-}
+    
+   
+    
+}   
