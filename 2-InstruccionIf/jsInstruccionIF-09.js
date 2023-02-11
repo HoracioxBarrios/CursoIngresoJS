@@ -8,7 +8,8 @@ function mostrar()
 	//redondeo al numero menor  mas cercano?
 	numeroRandom = Math.floor(numeroRandom)+ 1; // sino aca te muestra del 0 al 9 por eso el +1
 
-	console.log(numeroRandom);
+	//console.log(numeroRandom);
+	alert(numeroRandom);
 
 	
 	
