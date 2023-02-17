@@ -7,7 +7,7 @@ en Verano: Se viaja a Mar del plata y Cataratas solamente
 
 en Otoño: Se viaja a todos los destinos.
 
-primavera: solo no se viaja a Bariloche */
+primavera: solo no se viaja a Bariloche  */
 
 function mostrar()
 {
