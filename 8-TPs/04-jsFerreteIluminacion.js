@@ -5,11 +5,11 @@ B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuent
 C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
- ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó . 
+ ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
  
 
  */
-
+/*
 function CalcularPrecio() {
   let precioLamparitas = 35;
   let cantidadLamp;
@@ -19,7 +19,7 @@ function CalcularPrecio() {
   let importeConDescuento;
   let impuestoIibb;
   let importeConAumento;
-
+  debugger
   // toma por Id - cantidad de lamparas
   cantidadLamp = document.getElementById("txtIdCantidad").value;
   cantidadLamp = parseInt(cantidadLamp);
@@ -60,10 +60,12 @@ function CalcularPrecio() {
     } else if (marcaLamp == "FelipeLamparas") {
       // aplico 10% de descuento
       descuento = (importeBruto * 10) / 100;
-    } else {
+    } else if ( cantidadLamp < 3){
       // aplico 5% de descuento
       descuento = (importeBruto * 5) / 100;
     }
+  }else if (cantidadLamp < 3){
+    descuento = 0;
   }
   importeConDescuento = importeBruto - descuento;
 
@@ -84,8 +86,8 @@ function CalcularPrecio() {
       importeConDescuento.toFixed(2);
   }
 }
+*/
 
-/*
 
 //Usando Switch
 function CalcularPrecio() {
@@ -107,6 +109,10 @@ function CalcularPrecio() {
   importeBruto = precioLamparitas * cantidadLamparas;
 
   switch (cantidadLamparas) {
+    case 1:
+    case 2:
+      descuento = 0;
+      break;
     case 3:
       if (marcaDeLamparas == "ArgentinaLuz") {
         descuento = (importeBruto * 15) / 100;
@@ -153,4 +159,4 @@ function CalcularPrecio() {
 }
 
 
-*/
+
