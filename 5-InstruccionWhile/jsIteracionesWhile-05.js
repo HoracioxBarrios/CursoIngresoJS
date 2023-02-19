@@ -39,7 +39,9 @@ function mostrar()
 
 
 /*
-//nota: seria incorrecto usar || 
+
+// Ejermplo de lo que estaria mal
+//seria incorrecto usar || 
 // con while validando y mostrando en caso de incorrecto, se avisa y pide nuevamente
 function mostrar()
 {
