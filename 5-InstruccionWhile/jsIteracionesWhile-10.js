@@ -31,12 +31,11 @@ function mostrar()
 
 	flagNegativos = true;
 	flagPositivos = true;
-	contadorNegativos = 0;
+	contadorNegativos = 0;// inicializando los contadores en 0
 	contadorPositivos = 0;
 	contadorCeros = 0;
 	contadorNumeroPar = 0;
-
-	numeroNegativo = 0;
+	numeroNegativo = 0;// inicializando los acumuladores en 0
 	numeroPositivo = 0;
 	
 
