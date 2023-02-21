@@ -69,11 +69,8 @@ function mostrar()
 			contadorNumeroPar ++;//6-Cantidad de números pares
 		}
 
-
-
 		pregunta = confirm("desea ingresar otro numero?");
-		
-		
+
 	}while(pregunta == true);
 
 
