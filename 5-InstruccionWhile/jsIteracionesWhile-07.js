@@ -3,7 +3,77 @@ Al presionar el botón pedir  números  hasta que el USUARIO QUIERA
 e informar la suma acumulada y el promedio.
 */
 
-//revisar para mejorar
+
+function mostrar(){
+	let numeroIngresado;
+	let contador;
+	let acumulador;
+	let pregunta; //flag
+	let promedio;
+
+	contador = 0;
+	acumulador = 0;
+	
+	//pregunta = true;  no tiene sentido ya que confirm devuelve el valor booleano true o false, y en el while se evalua esto!
+
+	do{
+		numeroIngresado = prompt("Ingrese un numero");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		acumulador = acumulador + numeroIngresado;
+		// preguntamos al usuario
+		pregunta = confirm("desea Ingresar otro Numero?")
+
+		contador ++;
+
+	}while(pregunta == true);
+	//calculo el promedio
+	promedio = acumulador / contador;
+	
+	//muestro los resultados por Id
+	document.getElementById("txtIdSuma").value = acumulador;
+
+	document.getElementById("txtIdPromedio").value = promedio;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function mostrar(){
 	let numeroIngresado;
 	let acumulador;
@@ -35,7 +105,7 @@ function mostrar(){
 	document.getElementById("txtIdPromedio").value = promedio;
 
 
-}
+}*/
 
 
 
