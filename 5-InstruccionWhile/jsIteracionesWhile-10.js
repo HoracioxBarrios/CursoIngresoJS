@@ -89,8 +89,13 @@ function mostrar()
 	//9-Diferencia entre positivos y negativos, (positvos-negativos).
 	diferencia = numeroPositivo - numeroNegativo;
 
-	console.log("Suma de numeros negativos "+ numeroNegativo + " contador negativos  " + contadorNegativos);
-	console.log("Suma de numeros positivos "+ numeroPositivo + " contador positivos  " + contadorPositivos);
-	console.log("promedio de Negativos "+ promedioNegativos.toFixed(2) + " / promedio de positivos "+ promedioPositivos.toFixed(2));
-	console.log("Diferencia: " + diferencia);
+	//mostramos por document.write()
+	document.write("Suma de negativos: " + numeroNegativo + " Contador de negativos: " + contadorNegativos + "\n"
+	+ "Suma de positivos: " + numeroPositivo + " Contador de positivos: " + contadorPositivos + "\n"
+	+ "Cantidad de Ceros: " + contadorCeros + "\n"
+	+ "Cantidad de Numeros pares: " + contadorNumeroPar + "\n"
+	+ "Promedio de Negativos: " + promedioNegativos + " Promedio de positivos: " + promedioPositivos + "\n"
+	+ "Diferencia entre Positivos y Negativos(Positivos - Negativos): " + diferencia);
+
+	
 }//FIN DE LA FUNCIÓN
