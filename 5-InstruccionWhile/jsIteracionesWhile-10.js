@@ -7,7 +7,7 @@ hasta que el usuario quiera, mostrar:
 4-Cantidad de negativos. N
 5-Cantidad de ceros.
 
-6-Cantidad de números pares.
+6-Cantidad de números pares. -------------------- continuar aca!
 7-Promedio de positivos.
 8-Promedios de negativos. N 
 9-Diferencia entre positivos y negativos, (positvos-negativos). */
