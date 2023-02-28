@@ -10,8 +10,8 @@ function mostrar()
 
 	// nombre = document.getElementById("txtIdNombre").value;
 	// edad = document.getElementById("txtIdEdad").value;
-	 nombre = txtIdNombre.value;
-	 edad = txtIdEdad.value;
+	nombre = txtIdNombre.value;
+	edad = txtIdEdad.value;
 
 	//aca lo mostramos por alert
 	alert("usted se llama: "+ nombre + " y tiene " + edad + " años");
