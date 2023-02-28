@@ -40,20 +40,6 @@ function mostrar(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 // para mejorar
 function mostrar(){
