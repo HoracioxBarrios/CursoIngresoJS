@@ -3,7 +3,7 @@ Al presionar el botón pedir un sexo
 'f' para femenino, 'm' para masculino.*/
 
 
-
+/*
 //con do while
 function mostrar(){
 	let sexo;
@@ -15,9 +15,9 @@ function mostrar(){
 	document.getElementById("txtIdSexo").value = sexo;
 }
 
+*/
 
 
-/*
 // con while validando y mostrando en caso de ser incorrecto, se avisa al usuario y pide nuevamente
 function mostrar()
 {
@@ -34,12 +34,12 @@ function mostrar()
 	}
 	document.getElementById("txtIdSexo").value = SexoIngresado;
 }//FIN DE LA FUNCIÓN
-*/
+
+
 
 
 
 /*
-
 // Ejermplo de lo que estaria mal
 //seria incorrecto usar || 
 // con while validando y mostrando en caso de incorrecto, se avisa y pide nuevamente
@@ -47,7 +47,7 @@ function mostrar()
 {
 	let SexoIngresado;
 
-	//supongamos que el usuario ingresa una letra equivocada, ejemplo "g"
+	//supongamos que el usuario ingresa una letra equivocada, ejemplo "f"
 	SexoIngresado = prompt("ingrese un sexo f o m "); 
 
 
@@ -61,4 +61,5 @@ function mostrar()
 	}
 	document.getElementById("txtIdSexo").value = SexoIngresado;
 }//FIN DE LA FUNCIÓN
+
 */
