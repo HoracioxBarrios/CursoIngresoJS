@@ -32,8 +32,11 @@ function mostrar() {
   let promedioNegativos;
   let promedioPositivos;
   let diferencia;
+  let contadorNunGenerales;
   let porcentajePositivos;
   let porcentajeNegativos;
+  let minimoNegativo;
+  let maximoPositivo;
 
   flagNegativos = true;
   flagPositivos = true;
@@ -41,59 +44,74 @@ function mostrar() {
   contadorPositivos = 0;
   contadorCeros = 0;
   contadorNumeroPar = 0;
+  contadorNunGenerales = 0;
   acumNegativos = 0; // inicializando los acumuladores en 0
   acumPositivos = 0;
 
-  do {
+  do{
     numeroIngresado = prompt("ingrese un numero");
     numeroIngresado = parseInt(numeroIngresado);
 
-    if (numeroIngresado < 0) {
+    if(numeroIngresado < 0) {
       // es numero negativo:
-      if (flagNegativos) {
+      if(flagNegativos){
         acumNegativos = numeroIngresado;
+        minimoNegativo = numeroIngresado;
         flagNegativos = false;
-      } else {
+      }else{
+          if(numeroIngresado < minimoNegativo){
+            minimoNegativo = numeroIngresado;
+          }
         acumNegativos = acumNegativos + numeroIngresado; //1-Suma de los negativos.
       }
       contadorNegativos++; //4-Cantidad de negativos.
-    } else if (numeroIngresado > 0) {
+    } else if(numeroIngresado > 0) {
       // entonces es positivo
-      if (flagPositivos) {
+      if(flagPositivos) {
         acumPositivos = numeroIngresado;
+        maximoPositivo = numeroIngresado;
         flagPositivos = false;
-      } else {
+      }else{
+        if(numeroIngresado > maximoPositivo){
+          maximoPositivo = numeroIngresado;
+        }
         acumPositivos = acumPositivos + numeroIngresado; //2-Suma de los positivos.
       }
       contadorPositivos++; //3-Cantidad de positivos.
-    } else {
+    }else{
       // si es 0
       contadorCeros++; //5-Cantidad de ceros.
     }
 
-    if (numeroIngresado % 2) {
+    if(numeroIngresado % 2) {
       contadorNumeroPar++; //6-Cantidad de números pares
     }
 
     pregunta = confirm("desea ingresar otro numero?");
-  } while (pregunta == true);
+    contadorNunGenerales ++;
+  }while(pregunta == true);
 
-  if (contadorPositivos == 0) {
-    //si es 0 significa que no ingresó numero positivo
-    promedioPositivos = 0;
-  } else {
+  //si es 0 significa que no ingresó numero positivo
+  if(contadorPositivos == 0) {
+   promedioPositivos = 0;
+  }else{
     promedioPositivos = acumPositivos / contadorPositivos; //7-Promedio de positivos.
   }
 
-  if (contadorNegativos == 0) {
-    ////si es 0 significa que no ingresó numero negativo
+  ////si es 0 significa que no ingresó numero negativo
+  if(contadorNegativos == 0) {
     promedioNegativos = 0;
-  } else {
+  }else{
     promedioNegativos = acumNegativos / contadorNegativos; //8-Promedios de negativos.
   }
 
   //9-Diferencia entre positivos y negativos, (positvos-negativos).
   diferencia = acumPositivos - acumNegativos;
+
+  //porcentaje de positivos
+  porcentajePositivos = (contadorPositivos / contadorNunGenerales)* 100;
+  //porcentaje de Negativos
+  porcentajeNegativos = (contadorNegativos / contadorNunGenerales)* 100;
 
   //mostramos por document.write()
   document.write(
@@ -121,12 +139,16 @@ function mostrar() {
       "Diferencia entre Positivos y Negativos(Positivos - Negativos): " +
       diferencia
   );
-
+    console.log("cont nun generales: " + contadorNunGenerales);
+    console.log("% positivos: " + porcentajePositivos);
+    console.log("% negativos: " + porcentajeNegativos);
+    console.log("minimo Negativo: " + minimoNegativo);
+    console.log("maximo positivo: " + maximoPositivo);
 
 } //FIN DE LA FUNCIÓN
 
 
-/*NOTA: para porcentajes positivos:
+/*NOTA: para porcentajes positivos: como regla de 3
  contadorTotal 14_______________ 100 
  contaPositivos 5 _______________ ?
  contadorPositivos = 5
