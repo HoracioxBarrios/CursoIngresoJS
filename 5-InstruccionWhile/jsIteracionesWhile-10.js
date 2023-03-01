@@ -83,7 +83,7 @@ function mostrar() {
       contadorCeros++; //5-Cantidad de ceros.
     }
 
-    if (numeroIngresado % 2) {
+    if (numeroIngresado % 2 == 0) {
       contadorNumeroPar++; //6-Cantidad de números pares
     }
 
