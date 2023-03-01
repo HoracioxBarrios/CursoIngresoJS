@@ -121,7 +121,35 @@ function mostrar() {
       "Diferencia entre Positivos y Negativos(Positivos - Negativos): " +
       diferencia
   );
+
+
 } //FIN DE LA FUNCIÓN
+
+
+/*NOTA: para porcentajes positivos:
+ contadorTotal 14_______________ 100 
+ contaPositivos 5 _______________ ?
+ contadorPositivos = 5
+ contadorTotal = 14
+ Porcentaje Positivos = (5 * 100 )/ 14  que es igual a : 35,714 %
+ 
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ##########         Ejercicio 10 Original 
 Al presionar el botón pedir  números  
