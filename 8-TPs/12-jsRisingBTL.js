@@ -16,16 +16,16 @@ function ComenzarIngreso()
 	let sueldoBruto;
 	let numeroDeLegajo;
 	let nacionalidad;
-	let noEsNumero;
+	let noEsNumero; // uso la funcion isNaN para corroborar si no es numero, (para validar)
 
 
 	//A.Edad, entre 18 y 90 años inclusive.
 	edad = parseInt(prompt("ingrese Edad entre 18 y 90 inclusive"));
 	noEsNumero = isNaN(edad);
-	console.log(noEsNumero)
+	
 
 	while(edad < 18 || edad > 90 || noEsNumero){
-		edad = parseInt(prompt("incorrecto- ingrese Edad entre 18 y 90 inclusive"));
+		edad = parseInt(prompt("incorrecto! - ingrese Edad entre 18 y 90 inclusive"));
 		noEsNumero = isNaN(edad);
 	}
 	
@@ -35,7 +35,7 @@ function ComenzarIngreso()
 	sexo = sexo.toLocaleUpperCase();
 
 	while(sexo != "M" && sexo != "F"){
-		sexo = prompt("incorrecto   Ingrese sexo M 'masculino'- F 'Femenino ");
+		sexo = prompt("incorrecto!   Ingrese sexo M 'masculino'- F 'Femenino ");
 		sexo = sexo.toLocaleUpperCase();
 	}
 	
@@ -45,7 +45,7 @@ function ComenzarIngreso()
 	noEsNumero = isNaN(estadoCivil);
 
 	while( estadoCivil <= 0 || estadoCivil > 4 || noEsNumero){
-		estadoCivil = prompt("Incorrecto - ingrese estado civil 1-soltero 2-casado 3-divorciado 4-viudo");
+		estadoCivil = prompt("Incorrecto! - ingrese estado civil 1-soltero 2-casado 3-divorciado 4-viudo");
 		estadoCivil = parseInt(estadoCivil);
 		noEsNumero = isNaN(estadoCivil);
 		

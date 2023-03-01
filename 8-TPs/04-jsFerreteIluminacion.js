@@ -9,7 +9,79 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  
 
  */
-/*
+
+//Usando Switch - entregar como: Clase 07 de integradores
+function CalcularPrecio() {
+  let precioLamparitas = 35;
+  let cantidadLamparas;
+  let marcaDeLamparas;
+  let importeBruto;
+  let descuento;
+  let importeConDescuento;
+  let impuestoIibb;
+  let importeConAumento;
+
+  // tomamos los datos por Id
+  cantidadLamparas = document.getElementById("txtIdCantidad").value;
+  cantidadLamparas = parseInt(cantidadLamparas);
+
+  marcaDeLamparas = document.getElementById("Marca").value;
+
+  importeBruto = precioLamparitas * cantidadLamparas;
+
+  switch (cantidadLamparas) {
+    case 1:
+    case 2:
+      descuento = 0;
+      break;
+    case 3:
+      if (marcaDeLamparas == "ArgentinaLuz") {
+        descuento = (importeBruto * 15) / 100;
+      }
+      else if (marcaDeLamparas == "FelipeLamparas") {
+        descuento = (importeBruto * 10) / 100;
+      }
+      else {
+        descuento = (importeBruto * 5) / 100;
+      }
+      break;
+    case 4:
+      if (marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas") {
+        descuento = (importeBruto * 25) / 100;
+      }
+      else {
+        descuento = (importeBruto * 20) / 100;
+      }
+      break
+    case 5:
+      if (marcaDeLamparas == "ArgentinaLuz") {
+        descuento = (importeBruto * 40) / 100;
+      }
+      else {
+        descuento = (importeBruto * 30) / 100;
+      }
+      break;
+    default:
+      descuento = (importeBruto * 50) / 100;
+
+  }
+  importeConDescuento = importeBruto - descuento;
+  if (importeConDescuento > 120) {
+    impuestoIibb = (importeConDescuento * 10) / 100;
+    importeConAumento = importeConDescuento + impuestoIibb;
+    document.getElementById("txtIdprecioDescuento").value = importeConAumento;
+    alert("Usted pago: " + impuestoIibb + "$  de IIBB");
+  }
+  else {
+    document.getElementById("txtIdprecioDescuento").value = importeConDescuento;
+  }
+
+
+}
+
+
+// Con If()
+/* 
 function CalcularPrecio() {
   let precioLamparitas = 35;
   let cantidadLamp;
@@ -88,75 +160,6 @@ function CalcularPrecio() {
 }
 */
 
-
-//Usando Switch
-function CalcularPrecio() {
-  let precioLamparitas = 35;
-  let cantidadLamparas;
-  let marcaDeLamparas;
-  let importeBruto;
-  let descuento;
-  let importeConDescuento;
-  let impuestoIibb;
-  let importeConAumento;
-
-  // tomamos los datos por Id
-  cantidadLamparas = document.getElementById("txtIdCantidad").value;
-  cantidadLamparas = parseInt(cantidadLamparas);
-
-  marcaDeLamparas = document.getElementById("Marca").value;
-
-  importeBruto = precioLamparitas * cantidadLamparas;
-
-  switch (cantidadLamparas) {
-    case 1:
-    case 2:
-      descuento = 0;
-      break;
-    case 3:
-      if (marcaDeLamparas == "ArgentinaLuz") {
-        descuento = (importeBruto * 15) / 100;
-      }
-      else if (marcaDeLamparas == "FelipeLamparas") {
-        descuento = (importeBruto * 10) / 100;
-      }
-      else {
-        descuento = (importeBruto * 5) / 100;
-      }
-      break;
-    case 4:
-      if (marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas") {
-        descuento = (importeBruto * 25) / 100;
-      }
-      else {
-        descuento = (importeBruto * 20) / 100;
-      }
-      break
-    case 5:
-      if (marcaDeLamparas == "ArgentinaLuz") {
-        descuento = (importeBruto * 40) / 100;
-      }
-      else {
-        descuento = (importeBruto * 30) / 100;
-      }
-      break;
-    default:
-      descuento = (importeBruto * 50) / 100;
-
-  }
-  importeConDescuento = importeBruto - descuento;
-  if (importeConDescuento > 120) {
-    impuestoIibb = (importeConDescuento * 10) / 100;
-    importeConAumento = importeConDescuento + impuestoIibb;
-    document.getElementById("txtIdprecioDescuento").value = importeConAumento;
-    alert("Usted pago: " + impuestoIibb + "$  de IIBB");
-  }
-  else {
-    document.getElementById("txtIdprecioDescuento").value = importeConDescuento;
-  }
-
-
-}
 
 
 
