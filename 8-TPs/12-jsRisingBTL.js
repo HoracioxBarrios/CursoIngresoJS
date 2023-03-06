@@ -10,7 +10,7 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
 function ComenzarIngreso() 
 {
  	//definicion de variables
- 	let edad;
+	let edad;
 	let sexo;
 	let estadoCivil;
 	let sueldoBruto;
