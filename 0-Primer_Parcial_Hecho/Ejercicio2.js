@@ -100,6 +100,17 @@ function mostrar() {
                 contadorTerror++;
                 break;
             case "Heroes":
+                if(flagEdadMinima == true){ // cuando elije Heroes ahi , el minimo que haya visto pelis de Heroes!
+                    edadMinima = edad;
+                    nombreMinimo = nombre;
+                    generoMinimo = genero;
+                }else{
+                    if(edad < edadMinima){
+                        edadMinima = edad;
+                        nombreMinimo = nombre;
+                        generoMinimo = genero;
+                    }
+                }
                 contadorHeroes++;
                 break;
             case "Romance":
@@ -107,18 +118,7 @@ function mostrar() {
                 break;
         }
 
-        if(flagEdadMinima == true){
-            edadMinima = edad;
-            nombreMinimo = nombre;
-            generoMinimo = genero;
-        }else{
-            if(edad < edadMinima){
-                edadMinima = edad;
-                nombreMinimo = nombre;
-                generoMinimo = genero;
-            }
-        }
-
+        
         contadorGeneralTickets++;
         respuesta = confirm("desea seguir ?");
     }//while
