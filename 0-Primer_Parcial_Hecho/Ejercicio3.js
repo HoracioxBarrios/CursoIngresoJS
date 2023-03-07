@@ -37,7 +37,82 @@ D) Cuánto pagará el cliente incluyendo descuentos e intereses.
 
 */
 
+function mostrar(){
+    let producto;
+    let cantKilos;
+    let paisProveedor;
+    let precioAsado;
+    let precioVacio;
+    let precioAchuras;
+    let precioPollo;
+    let respuesta;
 
+
+    precioAsado = 2500;
+    precioVacio = 2700;
+    precioAchuras = 950;
+    precioPollo = 615;
+    respuesta = true;
+
+    while(respuesta == true){
+
+        //· Productos (Asado, Vacío, Achuras, Pollo)
+        do{
+            producto = prompt("ingrese tipo de producto");
+        }while(producto != "Asado" && producto != "Vacio" && producto != "Achuras" && producto != "Pollo");
+
+        //· Cantidad de kilos. (No puede ser negativo o mayor a 20 por stock)
+        do{
+            cantKilos = prompt("Ingrese cantidad de kilos");
+            cantKilos = parseFloat(cantKilos);
+        }while(cantKilos <= 0 || cantKilos > 20);
+
+        //· País del cual proviene (Argentina, Italia, Japón, Uruguay)
+        do{
+            paisProveedor = prompt("Ingrese pais proveedor");
+        }while(paisProveedor != "Argentina" && paisProveedor != "Italia"
+        && paisProveedor!= "Japón" && paisProveedor!= "Uruguay");
+
+
+        switch(producto){
+            case "Asado":
+                
+                break;
+            case "Vacio":
+                
+                break;
+            case "Achuras":
+                
+                break;
+            case "Pollo":
+                
+                break;
+        }
+
+        switch(paisProveedor) {
+            case "Argentina":
+                break;
+            case "Italia":
+                break;
+            case "Japón":
+                break;
+            case "Uruguay":
+                break;
+        }
+
+
+        respuesta = confirm("Desea añadir otro producto?");
+    }
+
+
+
+
+}
+/*Lista de precios
+- Asado: $2500 x Kg
+- Vacio: $2700 x Kg
+- Achuras: $ 950 x Kg
+- Pollo: $615 x Kg */
 
 
 
