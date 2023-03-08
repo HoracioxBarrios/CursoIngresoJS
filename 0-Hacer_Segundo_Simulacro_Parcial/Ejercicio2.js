@@ -6,8 +6,10 @@ Nombre:
 Comisión:
 Tutor:
 
-"Es la gala de eliminación en Gran Hermano y la producción nos pide un programa para contar los votos de los televidentes y saber cuál será el participante que deberá abandonar la casa más famosa del mundo.
-Los participantes en la placa son: La Tora, Romina, Julieta y Camila. Nacho no fue nominado y Marcos no está en la placa esta semana por haber ganado la inmunidad.
+"Es la gala de eliminación en Gran Hermano y la producción nos pide un programa para contar los votos de los televidentes y 
+saber cuál será el participante que deberá abandonar la casa más famosa del mundo.
+Los participantes en la placa son: La Tora, Romina, Julieta y Camila. Nacho no fue nominado y Marcos no está en la placa 
+esta semana por haber ganado la inmunidad.
 El televidente debe ingresar:
 Nombre del votante
 Edad del votante (debe ser mayor a 13)

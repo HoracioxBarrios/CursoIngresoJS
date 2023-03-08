@@ -11,8 +11,10 @@ Para ello se ingresa:
 - Nombre del producto
 - Precio (EN USD)
 - Origen (EEUU, China, España)
-Por cada producto proveniente de CHINA se agregará al precio del mismo un 5%, debido al impuesto de productos Electronicos provenientes de ese pais.
-Si el importe final de todos los productos comprados supera los 50 usd tendrá que pagar un 50% de impuestos por la importación de los mismos.
+Por cada producto proveniente de CHINA se agregará al precio del mismo un 5%, debido al impuesto de 
+productos Electronicos provenientes de ese pais.
+Si el importe final de todos los productos comprados supera los 50 usd tendrá que pagar un 50% de 
+impuestos por la importación de los mismos.
 Por ejemplo ""Si gaste 45 usd en total sólo pago 45, pero si gaste 100 usd tengo que pagar 150""
 Como la compra es en dolares, al total de la misma se le deberá agregar el impuesto pais del 35%.
 A) Mostrar el total a pagar en pesos (1DOLAR oficial = $205)
