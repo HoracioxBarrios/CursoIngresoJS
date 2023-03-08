@@ -43,6 +43,7 @@ function mostrar(){
     flagEdadMinima = true;
     acumEdadMasculino = 0;
     contadorMasculino = 0;
+    contadorNoBinario = 0;
 
     while(respuesta == true){
 
@@ -107,13 +108,13 @@ function mostrar(){
     //C) Promedio de edades de las personas de genero masculino.
     promedioEdadMasculinos = acumEdadMasculino / contadorMasculino;
     //a
-    document.write("Cant Personas Genero NB que programan ASP.NET o JS, entre 25 y 40" + contadorNoBinario);
+    document.write("Cant Personas Genero NB que programan ASP.NET o JS, entre 25 y 40 Años:  " + contadorNoBinario + "</br>");
     //b
-    document.write("Nombre de la persona Jr con menor edad: " + nombreEdadMinima);
+    document.write("Nombre de la persona Jr con menor edad: " + nombreEdadMinima + "</br>");
     //c
     // si no entra ningun masculino promedio da undefined;
     if(contadorMasculino > 0){
-        document.write("Promedio de edades de las personas de genero masculino" + promedioEdadMasculinos);
+        document.write("Promedio de edades de las personas de genero masculino  " + promedioEdadMasculinos);
     }else{
         document.write("No hay Masculinos para el promedio");
     }
