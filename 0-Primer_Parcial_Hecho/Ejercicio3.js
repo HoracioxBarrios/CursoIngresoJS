@@ -46,13 +46,42 @@ function mostrar(){
     let precioAchuras;
     let precioPollo;
     let respuesta;
-
+    let precioDeCompra;
+    let porcentajeImportacion;
+    let precioImportacion;
+    let porcentajePorEscasez;
+    let precioConAumentoPorEzcacez;
+    let porcentajeAumentoDiezKilos;
+    let precioAumentoMayorDizKilos;
+    let productoMasRequerido;
+    let procentajeCorteAsado;
+    let procentajeCorteVacio;
+    let procentajeCorteAchuras;
+    let procentajeCortePollo;
+    let contadorAsado;
+    let contadorVacio;
+    let contadorAchuras;
+    let contadorPollo;
+    let contadorComprasGenerales;
+    let acumKilosAchura;
+    let acumuladorKilosGenerales;
+    let promedioKilosAchura;
+    let descuento;
+    let precioFinal;
 
     precioAsado = 2500;
     precioVacio = 2700;
     precioAchuras = 950;
     precioPollo = 615;
     respuesta = true;
+    contadorComprasGenerales = 0;
+    contadorAsado = 0;
+    contadorVacio = 0;
+    contadorAchuras = 0;
+    contadorPollo = 0;
+    acumKilosAchura = 0;
+    acumuladorKilosGenerales = 0;
+
 
     while(respuesta == true){
 
@@ -64,7 +93,7 @@ function mostrar(){
         //· Cantidad de kilos. (No puede ser negativo o mayor a 20 por stock)
         do{
             cantKilos = prompt("Ingrese cantidad de kilos");
-            cantKilos = parseFloat(cantKilos);
+            cantKilos = parseInt(cantKilos);
         }while(cantKilos <= 0 || cantKilos > 20);
 
         //· País del cual proviene (Argentina, Italia, Japón, Uruguay)
@@ -73,19 +102,57 @@ function mostrar(){
         }while(paisProveedor != "Argentina" && paisProveedor != "Italia"
         && paisProveedor!= "Japón" && paisProveedor!= "Uruguay");
 
+        //*********************** Procesos ***************************/
+        if(paisProveedor == "Argentina"){
+            porcentajeImportacion = 0;
+        }else{
+            porcentajeImportacion = 0.20;
+        }
+
+        if(cantKilos < 10){
+            porcentajeAumentoDiezKilos = 0;
+        }else {
+            porcentajeAumentoDiezKilos = 0.25;
+        }
+
+        if(producto == "Achuras"){
+            porcentajePorEscasez = 0.15;
+        }else {
+            porcentajePorEscasez = 0;
+        }
 
         switch(producto){
             case "Asado":
+                precioDeCompra = precioAsado * cantKilos; //2500 si es 1 kilo
                 
+                precioConAumentoPorEzcacez = precioDeCompra * porcentajePorEscasez;// no se calcula en este enunciado con el asado sino con las achuras
+                precioImportacion = precioDeCompra * porcentajeImportacion; 
+                precioAumentoMayorDizKilos = precioDeCompra * porcentajeAumentoDiezKilos;
+                contadorAsado ++;
                 break;
             case "Vacio":
+                precioDeCompra = precioVacio * cantKilos;
                 
+                precioConAumentoPorEzcacez = precioDeCompra * porcentajePorEscasez; // no se calcula en este enunciado con el asado sino con las achuras
+                precioImportacion = precioDeCompra * porcentajeImportacion; 
+                precioAumentoMayorDizKilos = precioDeCompra * porcentajeAumentoDiezKilos; 
+                contadorVacio ++;
                 break;
             case "Achuras":
-                
+                precioDeCompra = precioAchuras * cantKilos;
+                precioConAumentoPorEzcacez = precioDeCompra * porcentajePorEscasez; //950 * 0.15 = 100
+                precioImportacion = precioDeCompra * porcentajeImportacion; //950 * 0.20 = 150  si es importado
+                precioAumentoMayorDizKilos = precioDeCompra * porcentajeAumentoDiezKilos; // 950 * 0.25 = 237.5 si supera los 10 kilos
+                contadorAchuras ++;
+                acumKilosAchura = acumKilosAchura + cantKilos;
                 break;
             case "Pollo":
+                precioDeCompra = precioPollo * cantKilos;
                 
+                precioConAumentoPorEzcacez = precioDeCompra * porcentajePorEscasez; // no se calcula en este enunciado con el asado sino con las achuras
+                precioImportacion = precioDeCompra * porcentajeImportacion; 
+                precioAumentoMayorDizKilos = precioDeCompra * porcentajeAumentoDiezKilos; 
+                contadorPollo ++;
                 break;
         }
 
@@ -102,17 +169,64 @@ function mostrar(){
 
 
         respuesta = confirm("Desea añadir otro producto?");
+
+        acumuladorKilosGenerales = acumuladorKilosGenerales + cantKilos;
+        contadorComprasGenerales ++;
+
+    }//while
+
+    //A) Producto más requerido (Sin importar su peso). // depende del contador de cada producto
+    if(contadorAsado > contadorVacio && contadorAsado > contadorAchuras && contadorAsado > contadorPollo){
+        productoMasRequerido = "Asado";
+    }else{
+        if(contadorVacio > contadorAchuras && contadorVacio > contadorPollo){
+            productoMasRequerido = "Vacio";
+        }else{
+            if(contadorAchuras > contadorPollo){
+                productoMasRequerido = "Achuras";
+            }else{
+                productoMasRequerido = "Pollo";
+            }
+        }
     }
+    //B) Porcentaje de cortes de carne (Asado, Vacío, Pollo) solicitado sobre el total de compras.
+    // porcentaje  
+    procentajeCorteAsado = (contadorAsado * 100) / contadorComprasGenerales;// supongamos contador = 4 * 100 = 400 /4 = 100% el procentaje de compra de asado
+    procentajeCorteVacio = (contadorVacio * 100) / contadorComprasGenerales;
+    procentajeCorteAchuras = (contadorAchuras * 100) / contadorComprasGenerales;
+    procentajeCortePollo = (contadorPollo * 100) / contadorComprasGenerales;
 
+    //C) Promedio de achuras sobre el total de kilos de todos los productos.
+    //promedio
+    if(contadorAchuras > 0){
+        promedioKilosAchura = acumuladorKilosGenerales / acumKilosAchura; // supongamos: 20kilos genrales / 5 kilos achura =  el promedio es 4
+    }else {
+        promedioKilosAchura = 0;
+    }
+    
 
+    //si compro todo descuento del 10& 
+    if(contadorAsado > 0 && contadorVacio > 0 && contadorAchuras > 0 && contadorPollo > 0){
+        descuento = 0.10;
+    }else{
+        descuento = 0;
+    } 
+    precioFinal = precioDeCompra + precioConAumentoPorEzcacez + precioImportacion + precioAumentoMayorDizKilos;  
+    //D) Cuánto pagará el cliente incluyendo descuentos e intereses.
+    precioFinal = precioFinal - descuento;
 
+    // muestro la salida:
+    //A) Producto más requerido (Sin importar su peso).
+    document.write("El producto mas requerido: " + productoMasRequerido + "</br>");
+    //B) Porcentaje de cortes de carne (Asado, Vacío, Pollo) solicitado sobre el total de compras.
+    document.write("Porcentaje de cortes: Asado" + procentajeCorteAsado + " Vacio" + procentajeCorteVacio 
+    + " achuras " + procentajeCorteAchuras + " Pollo" + procentajeCortePollo + "</br>");
+    //C) Promedio de achuras sobre el total de kilos de todos los productos.
+    document.write("Promedio de achuras " + promedioKilosAchura);
+    //D) Cuánto pagará el cliente incluyendo descuentos e intereses.
+    document.write("El precio final incluyendo aunmentos y descuento: " + precioFinal);
 
-}
-/*Lista de precios
-- Asado: $2500 x Kg
-- Vacio: $2700 x Kg
-- Achuras: $ 950 x Kg
-- Pollo: $615 x Kg */
+}//fin funcion
 
 
 
@@ -270,7 +384,7 @@ function mostrar() {
 
         acumuladorKilos += cantidadKilos;
 
-        precioCompra += aumentoImportacion + aumentoDiezKilos;
+        precioCompra += aumentoImportacion + aumentoDiezKilos; 
 
         precioComprasTotales += precioCompra;
 
@@ -302,8 +416,7 @@ function mostrar() {
     porcentajeKilosAsado = contadorComprasAsado * 100 / contadorComprasTotales;
     porcentajeKilosVacio = contadorComprasVacio * 100 / contadorComprasTotales;
     porcentajeKilosPollo = contadorComprasPollo * 100 / contadorComprasTotales;
-    porcentajeKilosAchuras =
-        contadorComprasAchuras * 100 / contadorComprasTotales;
+    porcentajeKilosAchuras = contadorComprasAchuras * 100 / contadorComprasTotales;
 
     //   D) Cuánto pagará el cliente incluyendo descuentos e intereses.
     if (
