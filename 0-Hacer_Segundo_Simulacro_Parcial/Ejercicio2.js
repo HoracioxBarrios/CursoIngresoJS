@@ -35,7 +35,7 @@ function mostrar(){
     let edadVotante;
     let generoVotante;
     let nombreParticipanteDeLaCasa;
-    let respuesta = true;
+    let respuesta;
     let contadorVotosGeneral;
     let contadorEspecialNachoJulieta;
     let acumEdadFemeninos;
@@ -55,7 +55,7 @@ function mostrar(){
 
 
 
-
+    respuesta = true;
     contadorVotosGeneral = 0;
     acumEdadFemeninos = 0;
     contadorEdadFemenino = 0;
