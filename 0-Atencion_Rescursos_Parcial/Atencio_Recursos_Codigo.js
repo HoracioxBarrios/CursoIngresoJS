@@ -55,7 +55,7 @@ acumulador = 0;
 promedio = acumulador / contador;
 
 //el promedio es la suma acumulada dividida el contador.
-
+//promedio = (kilosAsado / kilosTotales) * 100
 //******************************************************* */
 
 // PORCENTAJE                   CON CONTADOR
