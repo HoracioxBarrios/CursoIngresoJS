@@ -1,3 +1,6 @@
+
+<!-- language: Javascript -->
+
 # **CursoIngresoJS**
 -----
 Curso de ingreso con JavaScript
@@ -167,6 +170,10 @@ function mostrarImporteDeUnViaje()
 * :exclamation:Hacer una mejora continua del curso.
 * :muscle:Reforzar conceptos que sean necesarios.
 * :mortar_board:Tener la evolución del alumno durante el curso.
+
+
+
+
 
 
 
